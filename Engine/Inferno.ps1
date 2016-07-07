@@ -1,7 +1,7 @@
 $Command = Read-Host "I shall "
 
 switch($Command){
-    Ignite { Write-Host "In Ignite"
+    Ignite {
         While ($true)
         {
             # Do things lots
