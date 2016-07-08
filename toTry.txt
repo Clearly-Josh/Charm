@@ -1,2 +1,5 @@
 https://jasperproject.github.io/
-Raspberry Pi 3
+
+SSD in Scottbox and run from there?
+
+Do functions go in Inferno or their own files?

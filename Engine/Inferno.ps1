@@ -7,33 +7,19 @@ do
             #Play engine noise (random pick between Mad Max intro, Mercedes S-class, Jet engine, starfighter, etc.)
             #$player = New-Object System.Media.SoundPlayer "$env:windir\Media\notify.wav"
             
-            $ignition = 1
-            $turns = 0
+            #call notification (recursive)function
 
-            do
-            {
-                Write-Host "I think I can"
+            #call status monitor function
 
-                # Do things lots
-        
-                #Check sys notifications
-                    #if notification, play alert audio
-                #Check sys status
-                #Consider giving inspiration
-                    #if long time since event, display something from heart or ask a how-are-you question
+            #start listening
 
-                #if(user input/nth iteration, break)
-                if($turns -eq 3){
-                    $ignition = 0
-                }
+            #call inspiration function/friendliness routines
 
-                # Add a pause so the loop doesn't run super fast and use lots of CPU        
-                Start-Sleep -m 700
-                $turns+=1
-                          
-            }while($ignition -eq 1)
+            Write-Host "`nGreen lit and fired up."
 
-            $Command = Read-Host "`nFired up.  What can I do?`n"
+            #Console input
+            #Will this conflict with voice commands?
+            $Command = Read-Host "`nWhat can I do?`n"
             switch($Command){
                 Rest{"And rest I shall, until need calls again.";break}
                 default {Write-Host "I must reject your command."}
@@ -45,6 +31,14 @@ do
     
     }
 
-    if($Command -eq "Rest"){$go = $false}
+    #close up shop
+    if($Command -eq "Rest")
+    {
+        $go = $false
+        #rest notification function
+        #rest status monitor function
+        #stop listening
+        #rest friendliness routines
+    }
 
 }while($go -eq $true)
